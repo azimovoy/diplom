@@ -1,0 +1,109 @@
+.main__box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    gap: 10px;
+    &_item {
+        background: white;
+        max-width: 315px;
+        width: 100%;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        
+        &:hover .main__box_item_discount {
+            opacity: 1;
+        }
+        
+        &_image {
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            max-height: 200px;
+            height: 100%;
+            width: 100%;
+            z-index: -2;
+        }
+        
+        &_name {
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+        
+        &_block {
+            display: flex;
+            padding: 10px;
+        }
+        
+        &_more {
+            margin-left: auto;
+            margin-top: auto;
+            height: 50px;
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+            box-shadow: 0 0 10px 0 grey;
+        }
+        
+        &_discount {
+            top: 5px;
+            opacity: 0;
+            margin-left: 5px;
+            background-color: orangered;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            transition: all 600ms;
+        }
+    }
+}
+
+@media (max-width: 1240px) {
+    .main__box {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 0 30px;
+        &_item {
+            height: 350px;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .main__box {
+        grid-template-columns: repeat(2, 1fr);
+        &_item {
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .main__box {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        &_item {
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .main__box {
+        &_item {
+            margin: 0 auto;
+            height: 400px;
+            &_block {
+                display: flex;
+                flex-direction: column;
+                .main__box_item_more {
+                     margin: 5px;
+                }
+            }
+        }
+    }
+}

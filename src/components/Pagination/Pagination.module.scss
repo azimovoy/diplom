@@ -1,0 +1,22 @@
+.block {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    gap: 20px;
+    &_item {
+        padding: 10px;
+        background: grey;
+        border: none;
+        color: aliceblue;
+
+        &.active {
+            background: red;
+          }
+    }
+}
+
+@media (max-width: 415px) {
+    .block {
+     flex-wrap: wrap;
+    }
+}
